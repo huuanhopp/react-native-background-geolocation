@@ -7,6 +7,7 @@ const modulePkg = require(path.join(moduleDir, 'package.json'));
 const moduleName = modulePkg.name.replace('/', '_');
 const appDir = path.resolve(moduleDir, '..', '..', '..');
 const commonModuleDir = 'common';
+const commonModuleLib = 'lib';
 const commonModuleName = `${moduleName}-${COMMON_MODULE_NAME_SUFFIX}`;
 const settingsGradlePath = path.join(appDir, 'android', 'settings.gradle');
 
@@ -16,7 +17,8 @@ module.exports = {
   moduleName,
   commonModuleName,
   commonModuleDir,
-  settingsGradlePath
+  settingsGradlePath,
+  commonModuleLib,
 };
 module.exports.REQUIRED_BACKGROUND_MODES = ['location'];
 module.exports.LINK_DEPENDENCIES = [];

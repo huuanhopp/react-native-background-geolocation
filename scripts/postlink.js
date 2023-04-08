@@ -21,6 +21,14 @@ if (!isInstalled.forAndroid()) {
       config
     )
   );
+  applyPatch(
+      config.settingsGradlePath,
+      makeSettingsPatch(
+          config.moduleName,
+          { sourceDir: path.join(config.moduleDir, 'android', config.commonModuleLib) },
+          config
+      )
+  );
 }
 
 if (!isInstalled.forIos()) {
